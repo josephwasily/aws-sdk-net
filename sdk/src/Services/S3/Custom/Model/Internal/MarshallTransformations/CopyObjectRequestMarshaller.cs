@@ -79,10 +79,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(copyObjectRequest.TagSet));
                 request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.REPLACE.Value);
             }
-            else
-            {
-                request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.COPY.Value);
-            }
+	   // comment out to make the sdk compatible with cloudflare r2 s3 APIs - the copy object api doesn't support x-tagging 
+    	   // ref: https://stackoverflow.com/a/77633341
+           //  else
+           // {
+           //     request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.COPY.Value);
+           // }
 
             request.Headers.Add(HeaderKeys.XAmzMetadataDirectiveHeader, S3Transforms.ToStringValue(copyObjectRequest.MetadataDirective.ToString()));
 
