@@ -33,8 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// Container for the parameters to the StartCommitmentPurchaseAnalysis operation.
     /// Specifies the parameters of a planned commitment purchase and starts the generation
     /// of the analysis. This enables you to estimate the cost, coverage, and utilization
-    /// impact of your planned commitment purchases. You can request up to 20 analysis runs
-    /// per day.
+    /// impact of your planned commitment purchases.
     /// </summary>
     public partial class StartCommitmentPurchaseAnalysisRequest : AmazonCostExplorerRequest
     {
